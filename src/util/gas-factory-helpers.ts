@@ -12,7 +12,6 @@ import _ from 'lodash';
 import { IV2PoolProvider, IV4PoolProvider } from '../providers';
 import { IPortionProvider } from '../providers/portion-provider';
 import { ProviderConfig } from '../providers/provider';
-import { ArbitrumGasData } from '../providers/v3/gas-data-provider';
 import { IV3PoolProvider } from '../providers/v3/pool-provider';
 import {
   GasModelProviderConfig,

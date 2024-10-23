@@ -61,9 +61,6 @@ export class V2HeuristicGasModelFactory extends IV2GasModelFactory {
     l2GasDataProvider,
     providerConfig,
   }: BuildV2GasModelFactoryType): Promise<IGasModel<V2RouteWithValidQuote>> {
-    const l2GasData = l2GasDataProvider
-      ? await l2GasDataProvider.getGasData(providerConfig)
-      : undefined;
 
     const usdPoolPromise: Promise<Pair> = this.getHighestLiquidityUSDPool(
       chainId,
@@ -122,7 +119,7 @@ export class V2HeuristicGasModelFactory extends IV2GasModelFactory {
         token,
         nativePool,
         this.provider,
-        l2GasData
+        {}
       );
     };
 

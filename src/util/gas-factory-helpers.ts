@@ -6,7 +6,6 @@ import { ChainId, Percent, Token, TradeType } from '@uniswap/sdk-core';
 import { UniversalRouterVersion } from '@uniswap/universal-router-sdk';
 import { Pair } from '@uniswap/v2-sdk';
 import { FeeAmount, Pool } from '@uniswap/v3-sdk';
-import brotli from 'brotli';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 
@@ -182,20 +181,20 @@ export function getGasCostInNativeCurrency(
 
 export function getArbitrumBytes(data: string): BigNumber {
   if (data == '') return BigNumber.from(0);
-  const compressed = brotli.compress(
-    Buffer.from(data.replace('0x', ''), 'hex'),
-    {
-      mode: 0,
-      quality: 1,
-      lgwin: 22,
-    }
-  );
+  // const compressed = brotli.compress(
+  //   Buffer.from(data.replace('0x', ''), 'hex'),
+  //   {
+  //     mode: 0,
+  //     quality: 1,
+  //     lgwin: 22,
+  //   }
+  // );
   // TODO: This is a rough estimate of the compressed size
   // Brotli 0 should be used, but this brotli library doesn't support it
   // https://github.com/foliojs/brotli.js/issues/38
   // There are other brotli libraries that do support it, but require async
   // We workaround by using Brotli 1 with a 20% bump in size
-  return BigNumber.from(compressed.length).mul(120).div(100);
+  return BigNumber.from(0).mul(120).div(100);
 }
 
 export function calculateArbitrumToL1FeeFromCalldata(

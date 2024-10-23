@@ -5,7 +5,6 @@ import _ from 'lodash';
 
 import { isNativeCurrency } from '@uniswap/universal-router-sdk';
 import {
-  DAI_OPTIMISM_SEPOLIA,
   ITokenListProvider,
   IV2SubgraphProvider,
   IV4PoolProvider,
@@ -201,7 +200,6 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
     WBTC_OPTIMISM_GOERLI,
   ],
   [ChainId.OPTIMISM_SEPOLIA]: [
-    DAI_OPTIMISM_SEPOLIA,
     USDC_OPTIMISM_SEPOLIA,
     USDT_OPTIMISM_SEPOLIA,
     WBTC_OPTIMISM_SEPOLIA,

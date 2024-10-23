@@ -506,7 +506,6 @@ export const calculateL1GasFeesHelper = async (
   quoteToken: Token,
   nativePool: Pair | Pool | null,
   provider: BaseProvider,
-  l2GasData?: ArbitrumGasData,
   providerConfig?: GasModelProviderConfig
 ): Promise<{
   gasUsedL1: BigNumber;

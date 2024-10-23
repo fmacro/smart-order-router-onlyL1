@@ -23,10 +23,10 @@ import {
   CachingGasStationProvider,
   CachingTokenProviderWithFallback,
   CachingV2PoolProvider,
-  CachingV2SubgraphProvider,
+  // CachingV2SubgraphProvider,
   CachingV3PoolProvider,
-  CachingV3SubgraphProvider,
-  CachingV4SubgraphProvider,
+  // CachingV3SubgraphProvider,
+  // CachingV4SubgraphProvider,
   EIP1559GasPriceProvider,
   ETHGasStationInfoProvider,
   IOnChainQuoteProvider,
@@ -47,7 +47,7 @@ import {
   SwapRouterProvider,
   TokenPropertiesProvider,
   UniswapMulticallProvider,
-  URISubgraphProvider,
+  // URISubgraphProvider,
   V2QuoteProvider,
   V2SubgraphProviderWithFallBacks,
   V3SubgraphProviderWithFallBacks,
@@ -105,7 +105,7 @@ import {
 import { CurrencyAmount } from '../../util/amounts';
 import {
   ID_TO_CHAIN_ID,
-  ID_TO_NETWORK_NAME,
+  // ID_TO_NETWORK_NAME,
   V2_SUPPORTED,
 } from '../../util/chains';
 import {
@@ -889,7 +889,7 @@ export class AlphaRouter
       );
     this.portionProvider = portionProvider ?? new PortionProvider();
 
-    const chainName = ID_TO_NETWORK_NAME(chainId);
+    // const chainName = ID_TO_NETWORK_NAME(chainId);
 
     // ipfs urls in the following format: `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/${protocol}/${chainName}.json`;
     if (v2SubgraphProvider) {

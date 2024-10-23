@@ -896,16 +896,16 @@ export class AlphaRouter
       this.v2SubgraphProvider = v2SubgraphProvider;
     } else {
       this.v2SubgraphProvider = new V2SubgraphProviderWithFallBacks([
-        new CachingV2SubgraphProvider(
-          chainId,
-          new URISubgraphProvider(
-            chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v2/${chainName}.json`,
-            undefined,
-            0
-          ),
-          new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
-        ),
+        // new CachingV2SubgraphProvider(
+        //   chainId,
+        //   new URISubgraphProvider(
+        //     chainId,
+        //     `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v2/${chainName}.json`,
+        //     undefined,
+        //     0
+        //   ),
+        //   new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
+        // ),
         new StaticV2SubgraphProvider(chainId),
       ]);
     }
@@ -914,16 +914,16 @@ export class AlphaRouter
       this.v3SubgraphProvider = v3SubgraphProvider;
     } else {
       this.v3SubgraphProvider = new V3SubgraphProviderWithFallBacks([
-        new CachingV3SubgraphProvider(
-          chainId,
-          new URISubgraphProvider(
-            chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v3/${chainName}.json`,
-            undefined,
-            0
-          ),
-          new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
-        ),
+        // new CachingV3SubgraphProvider(
+        //   chainId,
+        //   new URISubgraphProvider(
+        //     chainId,
+        //     `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v3/${chainName}.json`,
+        //     undefined,
+        //     0
+        //   ),
+        //   new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
+        // ),
         new StaticV3SubgraphProvider(chainId, this.v3PoolProvider),
       ]);
     }
@@ -934,16 +934,16 @@ export class AlphaRouter
       this.v4SubgraphProvider = v4SubgraphProvider;
     } else {
       this.v4SubgraphProvider = new V4SubgraphProviderWithFallBacks([
-        new CachingV4SubgraphProvider(
-          chainId,
-          new URISubgraphProvider(
-            chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v4/${chainName}.json`,
-            undefined,
-            0
-          ),
-          new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
-        ),
+        // new CachingV4SubgraphProvider(
+        //   chainId,
+        //   new URISubgraphProvider(
+        //     chainId,
+        //     `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v4/${chainName}.json`,
+        //     undefined,
+        //     0
+        //   ),
+        //   new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
+        // ),
         new StaticV4SubgraphProvider(
           chainId,
           this.v4PoolProvider,
